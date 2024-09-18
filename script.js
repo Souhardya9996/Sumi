@@ -107,3 +107,13 @@ document.onmousewheel = function(e) {
   radius += d;
   init(1);
 };
+function toggleMute() {
+  const audio = document.getElementById('background-music');
+  const button = document.getElementById('mute-button');
+
+  audio.muted = !audio.muted; // Toggle mute state
+
+  if (!audio.muted) {
+      button.style.display = 'none'; // Hide button if unmuted
+  }
+};
