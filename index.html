@@ -9,10 +9,10 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
- <div id="music-container">
-  <embed src="imgs/music.mp3" autostart="true" loop="true" width="0" height="0">
-
- </div>
+<div id="music-container">
+  <audio autoplay loop>
+    <source src="imgs/music.mp3" type="audio/wav" />
+  </audio> </div>
 <div id="drag-container">
   <div id="spin-container">
     <img src="imgs/1.jpg" alt="">
@@ -54,7 +54,6 @@
   <div id="ground"></div>
 </div>
 
-<div id="music-container"></div>
 
 
 <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
