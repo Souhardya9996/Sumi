@@ -9,11 +9,12 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div id="music-container">
-<audio id="background-music" autoplay loop>
+ <div id="music-container">
+  <audio id="background-music" autoplay loop muted>
     <source src="imgs/music.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
-</audio> </div>
+</audio>
+<button onclick="toggleMute()">Unmute</button></div>
 <div id="drag-container">
   <div id="spin-container">
     <img src="imgs/1.jpg" alt="">
