@@ -10,10 +10,6 @@ body {
   touch-action: none; 
 }
 
-button {
-  background-color: lightblue;
-  width:200px;
-}
 
 body {
   overflow: hidden;
