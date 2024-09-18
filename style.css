@@ -10,6 +10,10 @@ body {
   touch-action: none; 
 }
 
+button {
+  background-color: lightblue;
+}
+
 body {
   overflow: hidden;
   display: -webkit-box;
