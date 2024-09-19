@@ -1,39 +1,18 @@
 var radius = 540; // how big of the radius
+var autoRotate = true; // auto rotate or not
 var rotateSpeed = -60; // unit: seconds/360 degrees
 var imgWidth = 120; // width of images (unit: px)
 var imgHeight = 170; // height of images (unit: px)
 
-// Link of background music - set 'null' if you don't want to play background music
+// Link of background music - set 'null' if you dont want to play background music
 var bgMusicURL = 'imgs/music.mp3';
-var bgMusicControls = false; // Show UI music control
+var bgMusicControls = true; // Show UI music control
 
-var musicPlaying = false; // To track the state of music
-var animationPlaying = false; // To track the state of animation
 
-// Get the play button
-var playButton = document.getElementById('play');
-setTimeout(init, 2000000);
-
-// Event listener for the play button
-playButton.addEventListener('click', function() {
-  if (!musicPlaying) {
-    // Start music
-    if (bgMusicURL) {
-      document.getElementById('music-container').innerHTML += `
-      <audio id="bg-music" src="${bgMusicURL}" ${bgMusicControls ? 'controls' : ''} autoplay loop>    
-      <p>If you are reading this, it is because your browser does not support the audio element.</p>
-      </audio>`;
-      musicPlaying = true;
-    }
-  }
-
-  if (!animationPlaying) {
-    setTimeout(init,0);
-  }
-});
 
 // ===================== start =======================
-
+// animation start after 1000 miliseconds
+setTimeout(init, 1000);
 
 var odrag = document.getElementById('drag-container');
 var ospin = document.getElementById('spin-container');
@@ -80,6 +59,15 @@ var sX, sY, nX, nY, desX = 0,
 if (autoRotate) {
   var animationName = (rotateSpeed > 0 ? 'spin' : 'spinRevert');
   ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
+}
+
+// add background music
+if (bgMusicURL) {
+  document.getElementById('music-container').innerHTML += `
+<audio src="${bgMusicURL}" ${bgMusicControls? 'controls': ''} autoplay loop>    
+<p>If you are reading this, it is because your browser does not support the audio element.</p>
+</audio>
+`;
 }
 
 // setup events
