@@ -12,8 +12,24 @@ var bgMusicControls = true; // Show UI music control
 
 // ===================== start =======================
 // animation start after 1000 miliseconds
-setTimeout(init, 1000);
+setTimeout(init, 9000);
 
+playButton.addEventListener('click', function() {
+  if (!musicPlaying) {
+    // Start music
+    if (bgMusicURL) {
+      document.getElementById('music-container').innerHTML += `
+      <audio id="bg-music" src="${bgMusicURL}" ${bgMusicControls ? 'controls' : ''} autoplay loop>    
+      <p>If you are reading this, it is because your browser does not support the audio element.</p>
+      </audio>`;
+      musicPlaying = true;
+    }
+  }
+
+  if (!animationPlaying) {
+    setTimeout(init,0);
+  }
+});
 
 var odrag = document.getElementById('drag-container');
 var ospin = document.getElementById('spin-container');
