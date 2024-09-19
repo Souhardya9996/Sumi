@@ -7,12 +7,28 @@ var imgHeight = 170; // height of images (unit: px)
 // Link of background music - set 'null' if you dont want to play background music
 var bgMusicURL = 'https://api.soundcloud.com/tracks/143041228/stream?client_id=587aa2d384f7333a886010d5f52f302a';
 var bgMusicControls = true; // Show UI music control
+setTimeout(init, 20000);
 
 
+playButton.addEventListener('click', function() {
+  if (!musicPlaying) {
+    // Start music
+    if (bgMusicURL) {
+      document.getElementById('music-container').innerHTML += `
+      <audio id="bg-music" src="${bgMusicURL}" ${bgMusicControls ? 'controls' : ''} autoplay loop>    
+      <p>If you are reading this, it is because your browser does not support the audio element.</p>
+      </audio>`;
+      musicPlaying = true;
+    }
+  }
 
+  if (!animationPlaying) {
+    setTimeout(init,0);
+  }
+});
 // ===================== start =======================
 // animation start after 1000 miliseconds
-setTimeout(init, 1000);
+
 
 var odrag = document.getElementById('drag-container');
 var ospin = document.getElementById('spin-container');
@@ -62,13 +78,7 @@ if (autoRotate) {
 }
 
 // add background music
-if (bgMusicURL) {
-  document.getElementById('music-container').innerHTML += `
-<audio src="${bgMusicURL}" ${bgMusicControls? 'controls': ''} autoplay loop>    
-<p>If you are reading this, it is because your browser does not support the audio element.</p>
-</audio>
-`;
-}
+
 
 // setup events
 document.onpointerdown = function (e) {
