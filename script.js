@@ -68,8 +68,7 @@ function applyTranform(obj) {
 }
 
 function playSpin(yes) {
-  // Control animation play state
-  ospin.style.animationPlayState = yes ? 'running' : 'paused';
+  ospin.style.animationPlayState = (yes?'running':'paused');
 }
 
 var sX, sY, nX, nY, desX = 0,
@@ -77,11 +76,12 @@ var sX, sY, nX, nY, desX = 0,
     tX = 0,
     tY = 10;
 
-// Initialize the auto spin with paused state
-ospin.style.animation = `spin ${Math.abs(rotateSpeed)}s infinite linear`;
-playSpin(false); // Initially pause the animation
+// auto spin
+if (autoRotate) {
+  var animationName = (rotateSpeed > 0 ? 'spin' : 'spinRevert');
+  ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
+}
 
-//
 // setup events
 document.onpointerdown = function (e) {
   clearInterval(odrag.timer);
