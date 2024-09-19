@@ -5,7 +5,7 @@ var imgHeight = 170; // height of images (unit: px)
 
 // Link of background music - set 'null' if you don't want to play background music
 var bgMusicURL = 'imgs/music.mp3';
-var bgMusicControls = true; // Show UI music control
+var bgMusicControls = false; // Show UI music control
 
 var musicPlaying = false; // To track the state of music
 var animationPlaying = false; // To track the state of animation
