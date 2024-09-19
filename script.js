@@ -7,12 +7,14 @@ var imgHeight = 170; // height of images (unit: px)
 // Link of background music - set 'null' if you dont want to play background music
 var bgMusicURL = 'imgs/music.mp3';
 var bgMusicControls = true; // Show UI music control
+var playButton = document.getElementById('Play');
+var musicPlaying = false;
 
 
 
 // ===================== start =======================
 // animation start after 1000 miliseconds
-setTimeout(init, 9000);
+setTimeout(init, 20000);
 
 playButton.addEventListener('click', function() {
   if (!musicPlaying) {
@@ -24,8 +26,10 @@ playButton.addEventListener('click', function() {
       </audio>`;
       musicPlaying = true;
     }
-    setTimeout(init,0);
-  }
+      
+    }
+    
+  setTimeout(init,0);
 
 });
 
@@ -77,13 +81,7 @@ if (autoRotate) {
 }
 
 // add background music
-if (bgMusicURL) {
-      document.getElementById('music-container').innerHTML += `
-      <audio id="bg-music" src="${bgMusicURL}" ${bgMusicControls ? 'controls' : ''} autoplay loop>    
-      <p>If you are reading this, it is because your browser does not support the audio element.</p>
-      </audio>`;
-      musicPlaying = true;
-    }
+
 
 
 // setup events
