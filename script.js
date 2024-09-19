@@ -28,9 +28,6 @@ playButton.addEventListener('click', function() {
   }
 
   if (!animationPlaying) {
-    // Start the animation after button click
-    playSpin(true);
-    animationPlaying = true;
     setTimeout(init,0);
   }
 });
