@@ -7,12 +7,12 @@ var imgHeight = 170; // height of images (unit: px)
 // Link of background music - set 'null' if you dont want to play background music
 var bgMusicURL = 'imgs/music.mp3';
 var bgMusicControls = true; // Show UI music control
-setTimeout(init, 20000);
 
 
 
 // ===================== start =======================
 // animation start after 1000 miliseconds
+setTimeout(init, 1000);
 
 
 var odrag = document.getElementById('drag-container');
