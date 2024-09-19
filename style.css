@@ -22,6 +22,11 @@ body {
           transform-style: preserve-3d;
 }
 
+audio {
+    width: 400px;
+    height: 100px;
+} 
+
 #drag-container, #spin-container {
   position: relative;
   display: -webkit-box;
@@ -78,9 +83,10 @@ body {
 }
 
 #music-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 500px;
+    background: transparent;
 }
 
 @-webkit-keyframes spin {
