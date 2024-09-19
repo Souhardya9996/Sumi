@@ -9,6 +9,10 @@ body {
   /* for touch screen */
   touch-action: none; 
 }
+button {
+  height:20px;
+  width:300px;
+}
 
 body {
   overflow: hidden;
